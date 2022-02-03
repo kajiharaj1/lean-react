@@ -1,27 +1,26 @@
-console.log("test");
+const onClickAdd = () => {
+    const textEl = document.getElementById("add-text");
+    const text = textEl.value;
+    textEl.value = "";
 
-const title = document.getElementById("title");
-console.log(title);
+    const li = document.createElement("li");
+    const div = document.createElement("div");
+    const p = document.createElement("p");
+    p.textContent = text;
 
-const title2 = document.querySelector("#title");
-console.log(title2);
+    const button = document.createElement("button");
+    button.textContent = "削除";
 
-const containers = document.getElementsByClassName("container");
-console.log(containers);
+    button.addEventListener("click", () => {
+        const deleteTarget = button.closest("li");
+        document.getElementById("memo-list").removeChild(deleteTarget);
+    });
 
-const divEl = document.createElement("div");
-const pEl = document.createElement("p");
-const h2El = document.createElement("h2");
-divEl.appendChild(pEl);
-divEl.prepend(h2El);
+    div.appendChild(p);
+    div.appendChild(button);
 
-console.log(divEl);
+    li.appendChild(div);
+    document.getElementById("memo-list").appendChild(li);
+};
 
-const buttonEl = document.createElement("button");
-buttonEl.textContent = "ボタン";
-const div1El = document.querySelector(".container");
-div1El.appendChild(buttonEl);
-
-const h1El = document.getElementById("title");
-const bodyEl = document.querySelector("body");
-bodyEl.removeChild(h1El);
+document.getElementById("add-button").addEventListener("click", () => onClickAdd());
