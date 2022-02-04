@@ -1,0 +1,8 @@
+// プロジェクト作成
+docker-compose run --rm node sh -c "npm install -g create-react-app && create-react-app react-memo"
+
+// 起動
+docker-compose up -d
+
+// 確認
+http://localhost:3000

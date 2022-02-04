@@ -1,0 +1,10 @@
+version: '3.9'
+
+services:
+  node:
+    build: ./node
+    volumes:
+      - ./app:/usr/src/app:cached
+    command: sh -c "cd react-memo && yarn start"
+    ports:
+      - "3000:3000"
