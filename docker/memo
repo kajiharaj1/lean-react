@@ -3,6 +3,7 @@ docker-compose run --rm node sh -c "npm install -g create-react-app && create-re
 // (typescript)
 docker-compose run --rm node sh -c "npm install -g create-react-app && create-react-app react-memo --template typescript"
 
+// ### yarn や npm は cd react-memoで行う!!
 
 // 起動
 docker-compose up -d
