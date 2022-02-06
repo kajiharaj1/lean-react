@@ -7,5 +7,11 @@ docker-compose run --rm node sh -c "npm install -g create-react-app && create-re
 // 起動
 docker-compose up -d
 
+// styled-componentsの導入
+yarn add -D styled-components @types/styled-components
+
+yarnやnpmした後は、コンテナの再起動が必要
+
+
 // 確認
 http://localhost:3000
