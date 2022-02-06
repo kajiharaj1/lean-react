@@ -1,5 +1,8 @@
 // プロジェクト作成
 docker-compose run --rm node sh -c "npm install -g create-react-app && create-react-app react-memo"
+// (typescript)
+docker-compose run --rm node sh -c "npm install -g create-react-app && create-react-app react-memo --template typescript"
+
 
 // 起動
 docker-compose up -d
