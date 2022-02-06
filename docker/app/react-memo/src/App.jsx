@@ -1,15 +1,21 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, memo, useCallback } from "react";
+import { Child1 } from "./components/Child1.jsx";
 import { ColoredMessage } from "./components/ColoredMessage";
 import { CssModules } from "./components/CssModules";
 
 export const App = () => {
+    console.log("Appレンダリング");
+    
     // Stateの定義
     const [num, setNum] = useState(0);
 
     const onClickButton = () => {
         setNum(num + 1);
     };
+
+    const onClickReset = useCallback(() => {
+        setNum(0);
+    }, []);
 
     return (
         <>
@@ -19,6 +25,7 @@ export const App = () => {
             <button onClick={onClickButton}>ボタン</button>
             <p>{num}</p>
             <CssModules></CssModules>
+            <Child1 onClickReset={onClickReset} />
         </>
     );
 };
