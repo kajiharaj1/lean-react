@@ -5,6 +5,6 @@ services:
     build: ./node
     volumes:
       - ./app:/usr/src/app:cached
-    command: sh -c "cd react-memo && yarn start"
+    command: sh -c "cd react-router && yarn start"
     ports:
       - "3000:3000"
